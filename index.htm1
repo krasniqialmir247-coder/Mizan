@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1511">
+  <meta name="description" content="MIZAN – Bëje veprën. Harroje emrin.">
+  <link rel="manifest" href="manifest.json">
+
+  <title>MIZAN</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #07110d;
+      color: #f3f1e8;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 30px 20px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 38px;
+      font-weight: bold;
+      letter-spacing: 5px;
+    }
+
+    .subtitle {
+      color: #a9b5ad;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 15px;
+      padding-bottom: 100px;
+    }
+
+    .welcome {
+      background: linear-gradient(145deg, #10231b, #0b1813);
+      border: 1px solid #263c31;
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+
+    .welcome h2 {
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      color: #aebbb3;
+      line-height: 1.5;
+    }
+
+    .tree-box {
+      text-align: center;
+      background: #0d1c15;
+      border-radius: 24px;
+      padding: 25px;
+      margin-bottom: 18px;
+      border: 1px solid #263c31;
+    }
+
+    #tree {
+      font-size: 90px;
+      margin: 15px 0;
+      transition: 0.3s;
+    }
+
+    .progress {
+      height: 10px;
+      background: #1b2c24;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 15px;
+    }
+
+    #progressBar {
+      height: 100%;
+      width: 0%;
+      background: #d4af37;
+      transition: 0.4s;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      background: #0d1c15;
+      border: 1px solid #263c31;
+      border-radius: 20px;
+      padding: 20px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .card:active {
+      transform: scale(0.97);
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      color: #9daaa2;
+      font-size: 13px;
+    }
+
+    .secret {
+      margin-top: 18px;
+      background: #111d18;
+      border: 1px solid #4b4030;
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .secret h3 {
+      color: #d4af37;
+      margin-bottom: 8px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
+      background: #d4af37;
+      color: #101510;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .counter {
+      text-align: center;
+      margin-top: 15px;
+      color: #c4cec8;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #09130f;
+      border-top: 1px solid #24372e;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 5px;
+    }
+
+    nav button {
+      background: transparent;
+      color: #9eaaa3;
+      margin: 0;
+      padding: 5px;
+      font-size: 12px;
+    }
+
+    nav button:first-child {
+      color: #d4af37;
+    }
+
+    @media (max-width: 380px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">MIZAN</div>
+  <div class="subtitle">Bëje veprën. Harroje emrin.</div>
+</header>
+
+<div class="container">
+
+  <section class="welcome">
+    <h2>السلام عليكم 🌙</h2>
+    <p>
+      Çdo ditë është një mundësi për t'u afruar më shumë me Allahun.
+    </p>
+  </section>
+
+  <section class="tree-box">
+    <h3>Pema ime 🌳</h3>
+
+    <div id="tree">🌱</div>
+
+    <p id="treeText">Fillo me një vepër të mirë sot.</p>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <div class="counter">
+      <span id="points">0</span> vepra të regjistruara
+    </div>
+  </section>
+
+  <section class="grid">
+
+    <div class="card" onclick="addGoodDeed()">
+      <div class="icon">❤️</div>
+      <h3>Vepër e mirë</h3>
+      <p>Regjistro një vepër të mirë.</p>
+    </div>
+
+    <div class="card" onclick="dhikr()">
+     
